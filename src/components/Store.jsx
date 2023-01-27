@@ -1,8 +1,16 @@
 import React from 'react'
-
-function Store() {
+import ProductCart from './ProductCart'
+function Store({products}) {
+  
+  // console.log(products.filter((e => e.category =="men's clothing")))
   return (
-    <div>Store</div>
+    <div>
+      {products.map((product=> {
+        return(
+          <ProductCart product={product}/>
+        )
+      }))}
+    </div>
   )
 }
 
