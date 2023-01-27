@@ -1,12 +1,45 @@
+@import 'mediaqueries';
 img{
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    @include tablet {
+        width: 100px;
+      }
+      @include mobile {
+        width: 50px;
+      }
+    
 }
 main{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 30%;
-    height: 20%;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 20vw;
+    @include tablet {
+      width:35vw;
+    }
+    @include mobile {
+      width: 50vw;
+    }
+    // border-radius: 5%;
     border: 1px solid black;
+}
+h2{
+    width: 20vw;
+    font-size: 1.25rem;
+    @include tablet {
+        font-size: 0.85rem;  
+      }
+}
+h3{
+    width: 20vw;
+    font-size: 1.15rem;
+    @include tablet {
+        font-size: 0.75rem;  
+      }
+}
+.info{
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
 }

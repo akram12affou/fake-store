@@ -1,6 +1,7 @@
 @import 'mediaqueries';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+
 .header{
-  
     position: relative;
     display: flex;
     background: rgb(90, 129, 125);
@@ -73,6 +74,7 @@
     }
 }
 .menu{
+    overflow-x: hidden;
     position: absolute;
     right: 0;
     display: none;

@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1vw;
+  justify-content: space-around;
+  align-content: center;
+}/*# sourceMappingURL=store.css.map */
