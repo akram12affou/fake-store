@@ -1,19 +1,24 @@
 import React from 'react'
 import ProductCart from './ProductCart'
 import '../styles/store.css'
-function Store({products}) {
-   
+import LoadingSpinner from './LoadingSpinner'
+function Store({products,loading}) {
   // console.log(products.filter((e => e.category =="men's clothing")))
   return (
     <div class='main' >
     Categorie :
-    <div class='container'>
+    <>
+   {!loading ? 
+   <div class='container'>
       {products.map((product=> {
         return(
           <ProductCart product={product}/>
         )
+  
       }))}
-    </div>
+        </div> : <LoadingSpinner/>}
+      </>
+ 
     </div>
   )
 }

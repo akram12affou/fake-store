@@ -56,4 +56,67 @@ h3 {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+}
+
+.cancel-button {
+  cursor: pointer;
+  border: none;
+  background: rgb(255, 106, 106);
+  padding: 5px;
+  border-radius: 5%;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.cancel-button:hover {
+  background: rgb(255, 85, 85);
+  letter-spacing: 1px;
+}
+
+.minus-button {
+  padding: 0 6rem;
+  cursor: pointer;
+  border: none;
+  background: rgb(8, 86, 154);
+  padding: 5px;
+  border-radius: 5%;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.minus-button:hover {
+  background: rgb(83, 152, 166);
+  letter-spacing: 1px;
+}
+
+.plus-button {
+  padding: 0 2rem;
+  cursor: pointer;
+  border: none;
+  background: rgb(8, 86, 154);
+  padding: 5px;
+  border-radius: 5%;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.plus-button:hover {
+  background: rgb(83, 152, 166);
+  letter-spacing: 1px;
+}
+
+.buy-button {
+  cursor: pointer;
+  border: none;
+  background: rgb(8, 154, 81);
+  padding: 5px;
+  border-radius: 5%;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.buy-button:hover {
+  background: rgb(83, 166, 125);
+  letter-spacing: 1px;
+}
+
+.contoller {
+  display: flex;
+  justify-content: space-around;
 }/*# sourceMappingURL=ProductCart.css.map */
