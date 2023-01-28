@@ -7,9 +7,10 @@ import { Route, Routes } from "react-router-dom"
 import ShoppingC from "./components/ShoppingC"
 import Store from "./components/Store"
 import './styles/App.css'
+import ProductDetails from "./components/ProductDetails";
 function App() {
   const dispatch = useDispatch()
-  const products = useSelector(state => state[0].products)
+  const products = useSelector(state => state.products)
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(res => dispatch({type : 'fetch' ,payload : res.data}))
@@ -20,7 +21,8 @@ function App() {
          <Header/>
          <Routes>
          <Route exact path='/' element={<Store products={products}/>}></Route>
-           <Route exact path='/shoppingCart' element={<ShoppingC/>}></Route>
+        <Route exact path='/shoppingCart' element={<ShoppingC/>}></Route>
+        <Route exact path='/details/:id' element={<ProductDetails/>}></Route>
          </Routes>
     </div>
   )

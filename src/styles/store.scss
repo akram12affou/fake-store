@@ -3,7 +3,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap:1vw;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
- 
+}
+.main{
+    background: rgb(229, 246, 239);
 }

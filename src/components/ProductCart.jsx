@@ -1,28 +1,35 @@
 import React from 'react'
 import '../styles/ProductCart.css'
 import InfoIcon from '@mui/icons-material/Info';
+import { Link } from 'react-router-dom';
 function ProductCart({product}) {
    
-    const {id,title,description,category,image,price} = product;
-    // console.log(id,title,description,image,price)
+    const {id,title,category,image,price} = product;
   return (
     
         <main class='container' key={id}>
             <div className='img'>
             
                 <center>
-                Category :<i>{category}</i>
-            <img src={image} alt="" />
+                <i>Category :{category}</i>
+                <hr></hr>
+               <img src={image} alt="" />
             </center>
             </div>
             <div className='details'>
-            <h2>{title}</h2>
-            {/* <p>{description}</p> */}
-            
-            <h3>Price : {price} $</h3>
-            <div class="info">
-            <InfoIcon/><a href="">Details</a>
+             <h2>{title}</h2>
+             
+             <h3>Price : {price} $</h3>
+             <button>Buy</button>
+             <hr />
+             <div class="info">
+             <InfoIcon/><Link to={`./details/` + id}><a href="">Details</a></Link>
+             
+             <div>
+             
+             </div>
             </div>
+            
             </div>
         </main>
    
