@@ -3,6 +3,7 @@ import Footer from './Footer'
 import React, { useEffect, useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import LoadingSpinner from './LoadingSpinner';
+import '../styles/ShoppingC.css'
 function ShoppingC() {
   const shoppingCart = useSelector(state => state.shoppingCart)
   const [products,setProducts] = useState([])
@@ -51,9 +52,17 @@ function ShoppingC() {
          <>
               {products.map((e=> {
                 return(
-                  <div>
+                  
+                    <div class='details_containers' key={e.id}>
+              
+              <div class='img-p'>
+              <img src={e.image}/>
+              <div class='title-description'>
+              <p className='title'>{e.title}</p>
+              </div>
                   product : {e.id}
                    \\ <>number :  {number(e.id)}</>
+                  </div>
                   </div>
                 )
           
@@ -62,7 +71,6 @@ function ShoppingC() {
          : <LoadingSpinner/>}
       
       {!loading && <p>Total : {totalsum()} $</p>}
-      <Footer/>
     </div>
   )
 }

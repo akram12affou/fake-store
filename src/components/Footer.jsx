@@ -4,8 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 function Footer() {
   return (
     <div class='Footer'>
-        <GitHubIcon/>
-        
+        <a class='git' target="_blank" href="https://github.com/akram12affou"><GitHubIcon/></a>
    </div>
   )
 }
