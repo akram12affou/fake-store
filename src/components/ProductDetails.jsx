@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'
 import { useDispatch , useSelector } from 'react-redux';
 import LoadingSpinner from './LoadingSpinner';
+import Footer from './Footer'
 function ProductDetails() {
   const [loading , setLoading] = useState()
     let {id} = useParams();
@@ -29,7 +30,8 @@ function ProductDetails() {
         })}
         </>
          : <LoadingSpinner/>}
-       
+         
+      <Footer/>
     </div>
   )
 }

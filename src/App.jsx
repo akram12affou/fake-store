@@ -12,9 +12,9 @@ function App() {
   const [loading,setLoading]=useState(false)
   const dispatch = useDispatch()
   const products = useSelector(state => state.products)
-  useEffect( () => {
+  useEffect(() => {
     setLoading(true)
-    axios.get('https://fakestoreapi.com/products?limit=5')
+    axios.get('https://fakestoreapi.com/products')
       .then(res => dispatch({type : 'fetch' ,payload : res.data}))
       .then(res => setLoading(false))
   },[])
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
          <Header/>
          <Routes>
-         <Route exact path='/' element={<Store loading={loading} products={products}/>}></Route>
+         <Route exact path='/' element={<Store loading={loading} setLoading={setLoading} products={products}/>}></Route>
         <Route exact path='/shoppingCart' element={<ShoppingC/>}></Route>
         <Route exact path='/details/:id' element={<ProductDetails/>}></Route>
          </Routes>

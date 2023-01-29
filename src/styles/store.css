@@ -9,4 +9,22 @@
 
 .main {
   background: rgb(229, 246, 239);
+}
+
+.category-names {
+  background: rgb(124, 176, 155);
+}
+
+.option-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  align-items: baseline;
+}
+
+select {
+  cursor: pointer;
+  border: none;
+  padding: 3px;
+  font-family: "Poppins";
 }/*# sourceMappingURL=store.css.map */

@@ -1,6 +1,8 @@
 import axios from 'axios';
+import Footer from './Footer'
 import React, { useEffect, useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
+import LoadingSpinner from './LoadingSpinner';
 function ShoppingC() {
   const shoppingCart = useSelector(state => state.shoppingCart)
   const [products,setProducts] = useState([])
@@ -15,11 +17,10 @@ function ShoppingC() {
       if(shoppingCart[i]==id){
         count++;
       }
-   
     }
     return count;
   }
-  useEffect(async () => {
+  const fetch = async () => {
     setLoading(true)
     for(let i =0 ; settedArr.length > i;i++){
       const res = await axios.get('https://fakestoreapi.com/products/' + settedArr[i])
@@ -28,9 +29,12 @@ function ShoppingC() {
         setProducts(prod)
         setTotal(totale)
       }
-      
+      setLoading(false) 
+  }
+  useEffect(() => {
+    fetch()
     }
-  ),[])
+  ,[])
   
   const totalsum = () => {
     let sum = 0;
@@ -43,16 +47,22 @@ function ShoppingC() {
   totalsum()
   return (
     <div>
-      {products.map((e=> {
-        return(
-          <div>
-          product : {e.id}
-           \\ <>number :  {number(e.id)}</>
-          </div>
-        )
-  
-      }))}
-      <p>Total : {totalsum()} $</p>
+         {!loading ? 
+         <>
+              {products.map((e=> {
+                return(
+                  <div>
+                  product : {e.id}
+                   \\ <>number :  {number(e.id)}</>
+                  </div>
+                )
+          
+              }))}
+        </>
+         : <LoadingSpinner/>}
+      
+      {!loading && <p>Total : {totalsum()} $</p>}
+      <Footer/>
     </div>
   )
 }
