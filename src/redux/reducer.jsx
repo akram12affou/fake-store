@@ -28,6 +28,8 @@ function reducer(state = initialState, { type, payload }){
         }
     }
       return {...state,shoppingCart:arr}
+      case 'Cancel_All':
+        return {...state,shoppingCart:[]}
   default:
     return state
    

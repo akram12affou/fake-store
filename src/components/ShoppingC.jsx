@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import LoadingSpinner from "./LoadingSpinner";
 import "../styles/ShoppingC.css";
 function ShoppingC() {
+  const dispatch = useDispatch();
+  
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -21,7 +23,7 @@ function ShoppingC() {
   };
   const shoppingCart = useSelector((state) => state.shoppingCart);
   let settedArr = [...new Set(shoppingCart)];
-
+  
   const fetch = async () => {
     setLoading(true);
     for (let i = 0; settedArr.length > i; i++) {
@@ -35,6 +37,11 @@ function ShoppingC() {
     }
     setLoading(false);
   };
+  const handleBuy = () => {
+    dispatch({type:'Cancel_All'})
+    setProducts([])
+    setTotal(0)
+  }
   useEffect(() => {
     fetch();
   }, []);
@@ -49,34 +56,37 @@ function ShoppingC() {
     return sum.toFixed(2);
   };
   return (
-    <div>
-      {products.length == 0 && loading==false  ? <p>Your Shopping Cart is empty</p>: <> </>}
+    <div class='shopping-cart'>
+      {products.length == 0 && loading == false ? (
+        <center><p>Your Shopping Cart is empty</p></center>
+      ) : (
+        <> </>
+      )}
       {!loading ? (
         <div class="product_containers">
           {products.map((e) => {
             return (
-              <div  class="product" key={e.id}>
-              
+              <div class="product" key={e.id}>
                 <div>
                   <img src={e.image} />
                 </div>
-                <div>
+                <div class='decri'>
                   <p>{e.title}</p>
-                  <p>quantity : {number(e.id)}</p>
-                  </div>
-              
+                  <p class='quantity'>quantity : {number(e.id)}</p>
+                </div>
               </div>
             );
           })}
         </div>
-        
       ) : (
         <LoadingSpinner />
       )}
-
+      <div class='Total-Buy-con'> 
+     <div class='Total-Buy'>
       {!loading && <p>Total : {totalsum()} $</p>}
-      <button>buy</button>
-     
+      {products.length !== 0 && <button onClick={handleBuy}>buy</button>}
+      </div>
+      </div>
     </div>
   );
 }

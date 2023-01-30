@@ -8,11 +8,55 @@
 }
 
 .product {
-  width: auto;
+  width: 60vw;
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid rgb(0, 0, 0);
+  border: 2px solid rgb(45, 122, 0);
   padding: 5px;
   border-radius: 10px;
   margin-top: 15px;
+}
+
+.quantity {
+  width: 20vw;
+  font-style: oblique;
+  -webkit-text-decoration: underline rgb(50, 249, 0);
+          text-decoration: underline rgb(50, 249, 0);
+  font-size: calc(0.75rem + 0.75vw);
+  display: flex;
+  justify-content: center;
+}
+
+.shopping-cart {
+  background-color: rgb(217, 241, 231);
+}
+
+.decri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Total-Buy {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+.Total-Buy button {
+  background-color: rgb(50, 249, 0);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-family: "poppins";
+  font-weight: bolder;
+  cursor: pointer;
+}
+.Total-Buy p {
+  font-family: "poppins";
+  font-weight: bolder;
+}
+
+.Total-Buy-con {
+  width: 50vh;
+  display: inline;
 }/*# sourceMappingURL=ShoppingC.css.map */

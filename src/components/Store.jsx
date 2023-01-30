@@ -47,7 +47,7 @@ function Store({ products, loading, setLoading }) {
           <option>men's clothing</option>
         </select>
       </div>
-      <>
+      <div class='prod_cont'>
         {!loading ? (
           <div class="container">
             {products.map((product) => {
@@ -57,7 +57,7 @@ function Store({ products, loading, setLoading }) {
         ) : (
           <LoadingSpinner />
         )}
-      </>
+      </div>
       <Footer />
     </div>
   );

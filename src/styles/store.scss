@@ -1,7 +1,6 @@
 .container{
     display: flex;
     flex-direction: row;
-    
     flex-wrap: wrap;
     gap:1vw;
     justify-content: space-evenly;
@@ -17,13 +16,22 @@
 .option-container{
     display: flex;
     justify-content: center;
-    margin:10px 0;
+    margin-top:15px;
     align-items: baseline;
+}
+.prod_cont{
+    margin:40px 0;
+}
+.label{
+    font-size: calc(0.75rem + 0.75vw);
 }
 select{
     cursor: pointer;
     border: none;
     padding: 3px;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
     font-family: 'Poppins'
   
 }
