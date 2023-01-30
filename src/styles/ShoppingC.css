@@ -1,1 +1,18 @@
-/*# sourceMappingURL=ShoppingC.css.map */
+.product_containers {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.product {
+  width: auto;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 15px;
+}/*# sourceMappingURL=ShoppingC.css.map */
