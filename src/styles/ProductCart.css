@@ -1,22 +1,16 @@
+i {
+  font-size: calc(0.6rem + 0.5vw);
+}
+
 img {
-  width: 150px;
-}
-@media screen and (max-width: 768px) {
-  img {
-    width: 100px;
-  }
-}
-@media screen and (max-width: 280px) {
-  img {
-    width: 50px;
-  }
+  width: calc(75px + 5vw);
 }
 
 main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0.3rem;
+  padding: 0.3vw;
   width: 20vw;
   border-radius: 3%;
   border: 3px solid rgb(79, 98, 96);
@@ -34,22 +28,15 @@ main {
 
 h2 {
   width: 20vw;
-  font-size: 1.25rem;
-}
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 0.85rem;
-  }
+  font-size: calc(0.75rem + 0.75vw);
 }
 
 h3 {
   width: 20vw;
-  font-size: 1.15rem;
-}
-@media screen and (max-width: 768px) {
-  h3 {
-    font-size: 0.75rem;
-  }
+  font-style: oblique;
+  -webkit-text-decoration: underline rgb(50, 249, 0);
+          text-decoration: underline rgb(50, 249, 0);
+  font-size: calc(0.75rem + 0.75vw);
 }
 
 .info {

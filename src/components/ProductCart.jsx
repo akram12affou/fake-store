@@ -55,9 +55,9 @@ function ProductCart({ product }) {
         <h2>{title}</h2>
 
         <h3>Price : {price} $</h3>
-        {!show(id) &&<button class="buy-button" onClick={() => handleBuyClick(id)}>
+        {!show(id) && <div class="contoller"><button class="buy-button" onClick={() => handleBuyClick(id)}>
           Buy
-        </button> }
+        </button> </div>}
         {show(id) &&
         <div class="contoller">
           <button class="plus-button" onClick={() => handleBuyClick(id)}>+</button>

@@ -39,7 +39,7 @@ function ProductDetails() {
               </div>
               <div class='title-description'>
               <p className='title'>{e.title}</p>
-              
+              Description :
               <p className='description'>{e.description}</p>
               </div>
                 

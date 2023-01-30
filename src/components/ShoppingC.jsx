@@ -9,7 +9,6 @@ function ShoppingC() {
   const [total, setTotal] = useState([]);
   const [loading, setLoading] = useState(false);
   let totale = [];
-
   let prod = [];
   const number = (id) => {
     let count = 0;
@@ -20,51 +19,8 @@ function ShoppingC() {
     }
     return count;
   };
-  const dispatch = useDispatch();
   const shoppingCart = useSelector((state) => state.shoppingCart);
-  // console.log(shoppingCart)
   let settedArr = [...new Set(shoppingCart)];
-  const handleBuyClick = async(id) => {
-  
-    dispatch({ type: "add_to_shopping_cart", payload: id });
-    settedArr = [...new Set(shoppingCart)]
-    for (let i = 0; settedArr.length > i; i++) {
-      const res = await axios.get(
-        "https://fakestoreapi.com/products/" + settedArr[i]
-      );
-      totale = [...totale, [res.data.price, number(res.data.id)+1]];
-      setTotal(totale);
-    }
-    // console.log(totale)
-  };
-  const handleCancelClick =async (id) => {
-    setProducts(products.filter(e => e.id!==id))
-    dispatch({ type: "cancel_shopping_cart", payload: id });
-    for (let i = 0; settedArr.length > i; i++) {
-      const res = await axios.get(
-        "https://fakestoreapi.com/products/" + settedArr[i]
-      );
-      totale = [...totale, [res.data.price, number(res.data.id)-1]];
-      setTotal(totale);
-    }
-    
-  };
-  const handleMinuslClick =async (id) => {
-    console.log(number(id))
-    if((number(id)) == 1){
-      console.log('hy')
-      handleCancelClick(id)
-    }
-    dispatch({ type: "minus_shopping_cart", payload: id });
-    for (let i = 0; settedArr.length > i; i++) {
-      const res = await axios.get(
-        "https://fakestoreapi.com/products/" + settedArr[i]
-      );
-      totale = [...totale, [res.data.price, number(res.data.id)-1]];
-      setTotal(totale);
-    }
-    console.log(totale)
-  };
 
   const fetch = async () => {
     setLoading(true);
@@ -94,47 +50,33 @@ function ShoppingC() {
   };
   return (
     <div>
+      {products.length == 0 && loading==false  ? <p>Your Shopping Cart is empty</p>: <> </>}
       {!loading ? (
         <div class="product_containers">
           {products.map((e) => {
             return (
               <div  class="product" key={e.id}>
+              
                 <div>
                   <img src={e.image} />
                 </div>
                 <div>
                   <p>{e.title}</p>
-                  <div class="contoller">
-                    <button
-                      class="plus-button"
-                      onClick={() => handleBuyClick(e.id)}
-                    >
-                      +
-                    </button>
-                    <span>{number(e.id)}</span>
-                   <button
-                      class="minus-button"
-                      onClick={() => handleMinuslClick(e.id)}
-                      >
-                      -
-                    </button>
-                    <button
-                      class="cancel-button"
-                      onClick={() => handleCancelClick(e.id)}
-                    >
-                      Cancel
-                    </button>
+                  <p>quantity : {number(e.id)}</p>
                   </div>
-                </div>
+              
               </div>
             );
           })}
         </div>
+        
       ) : (
         <LoadingSpinner />
       )}
 
       {!loading && <p>Total : {totalsum()} $</p>}
+      <button>buy</button>
+     
     </div>
   );
 }
