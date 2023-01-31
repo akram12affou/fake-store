@@ -21,11 +21,14 @@ section {
   height: auto;
 }
 .img-p p {
-  color: rgb(255, 255, 0);
+  color: rgb(0, 255, 21);
   background: #000;
   display: inline;
   padding: 3px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  display: inline;
 }
 
 .title-description {

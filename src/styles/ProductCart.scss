@@ -31,14 +31,15 @@ main{
     flex-direction: row;
     justify-content: center;
     padding: 0.3vw;
-    width: 20vw;
-    
-    @include tablet {
-      width:35vw;
-    }
-    @include mobile {
-      width: 50vw;
-    }
+    // width: 20vw;
+    height: auto;
+    width:max-content;
+    // @include tablet {
+    //   width:60vw;
+    // }
+    // @include mobile {
+    //   width: 50vw;
+    // }
     border-radius: 3%;
     border: 3px solid rgb(79, 98, 96);;
 }

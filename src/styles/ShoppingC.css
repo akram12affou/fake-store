@@ -9,8 +9,9 @@
 
 .product {
   width: 60vw;
+  align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border: 2px solid rgb(45, 122, 0);
   padding: 5px;
   border-radius: 10px;
@@ -59,4 +60,18 @@
 .Total-Buy-con {
   width: 50vh;
   display: inline;
+}
+
+.cancel {
+  color: red;
+  font-weight: 900;
+  border: 2px red solid;
+  border-radius: 20%;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.cancel:hover {
+  background: rgb(255, 204, 204);
+  transform: scale(1.05);
 }/*# sourceMappingURL=ShoppingC.css.map */
