@@ -35,3 +35,10 @@ select{
     font-family: 'Poppins'
   
 }
+.Alert{
+    position: fixed;
+    right:10px;
+    width: fit-content;
+    font-size: calc(0.75rem + 0.4vw);
+    font-weight: 500;
+}

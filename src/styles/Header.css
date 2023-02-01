@@ -32,6 +32,18 @@
   text-decoration: underline;
   color: rgb(136, 255, 196);
 }
+.header_button-container button:hover p {
+  border-radius: 10%;
+}
+.header_button-container button p {
+  display: inline;
+  border: 2px solid transparent;
+  border-radius: 30%;
+  padding: 4px;
+  font-size: smaller;
+  background: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}
 
 .hum {
   display: none;
@@ -98,6 +110,16 @@
   margin: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.menu button p {
+  display: inline;
+  border: 2px solid transparent;
+  border-radius: 30%;
+  padding: 4px;
+  font-size: smaller;
+  background: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
 }
 .menu button:hover {
   text-decoration: underline;

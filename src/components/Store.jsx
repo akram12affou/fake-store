@@ -1,14 +1,32 @@
-import React from "react";
+import React ,{useEffect,useState} from "react";
 import ProductCart from "./ProductCart";
 import "../styles/store.css";
 import axios from "axios";
 import Footer from "./Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Alert } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingSpinner from "./LoadingSpinner";
 function Store({ products, loading, setLoading }) {
-  // const [loading,setLoading]=useState(false)
   const dispatch = useDispatch();
-  // const products = useSelector(state => state.products)
+  const  [show,setShow]=useState(false)
+  const [lastnum,setLastnum] = useState(0)
+  const number = [...new Set(useSelector(state => state.shoppingCart))].length
+ 
+  useEffect(() => {
+    setLastnum(number)
+    console.log(number,lastnum,1)
+    if(number<lastnum){
+      
+      return;
+    }
+    setLastnum(number)
+    console.log(number,lastnum,2)
+    number!==0 ? setShow(true) : null
+    setTimeout(() => {
+      setShow(false)
+    },1500)
+  },[number])
   const handleClick = (category) => {
     if (category == "--Please choose an option--") {
       return;
@@ -30,8 +48,13 @@ function Store({ products, loading, setLoading }) {
 
   return (
     <div class="main">
+      {show && <div class="Alert">
+      <Alert >
+          Product Added succesfully 
+      </Alert>
+      </div>}
       <div class="option-container">
-        <label for="category-names" class="label">
+        <label  class="label">
           Choose a category :{" "}
         </label>
         <select

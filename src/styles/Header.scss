@@ -30,6 +30,22 @@
         &:hover{
           text-decoration: underline;
           color: rgb(136, 255, 196);
+          p{
+            border-radius:10%;
+        
+          }
+        }
+        p{
+          display: inline;
+          border: 2px solid transparent;
+          border-radius:30%;
+          padding: 4px;
+          
+          font-size: smaller;
+          background: rgb(255, 0, 0);
+          color: rgb(255, 255, 255);
+          
+
         }
       }
     }
@@ -96,6 +112,16 @@
         margin:1rem;
         cursor: pointer; 
         transition: all 0.3s ease;
+        p{
+          display: inline;
+          border: 2px solid transparent;
+          border-radius:30%;
+          padding: 4px;
+          font-size: smaller;
+          background: rgb(255, 0, 0);
+          color: rgb(255, 255, 255);
+          margin-left:10px ;
+        }
         &:hover{
           text-decoration: underline;
           color: rgb(136, 255, 196);

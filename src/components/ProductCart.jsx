@@ -56,7 +56,7 @@ function ProductCart({ product }) {
 
         <h3>Price : {price} $</h3>
         {!show(id) && <div class="contoller"><button class="buy-button" onClick={() => handleBuyClick(id)}>
-          Buy
+          Add to Cart
         </button> </div>}
         {show(id) &&
         <div class="contoller">
