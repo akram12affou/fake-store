@@ -79,11 +79,11 @@ console.log(number)
       </div>
       <div class='prod_cont'>
         {!loading ? (
-          <div class="container">
+          <>
             {products.map((product) => {
               return <ProductCart product={product} />;
             })}
-          </div>
+          </>
         ) : (
           <LoadingSpinner />
         )}

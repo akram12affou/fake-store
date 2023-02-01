@@ -43,7 +43,7 @@ function ProductCart({ product }) {
 
   const { id, title, category, image, price } = product;
   return (
-    <main class="container" key={id}>
+    <main class='cart' key={id}>
       <div className="img">
         <center>
           <i>Category :{category}</i>
@@ -51,10 +51,10 @@ function ProductCart({ product }) {
           <img src={image} alt="" />
         </center>
       </div>
-      <div className="details">
-        <h2>{title}</h2>
+      <div class="details">
+        <h2 class='title'>{title}</h2>
 
-        <h3>Price : {price} $</h3>
+        <h3 class="price">Price : {price} $</h3>
         {!show(id) && <div class="contoller"><button class="buy-button" onClick={() => handleBuyClick(id)}>
           Add to Cart
         </button> </div>}
