@@ -1,10 +1,8 @@
-.product_containers{
 
+.product_containers{
 display: flex;
 width:fit-content;
 flex-direction: column;
-
-
 margin:0 auto
 }
 .product{
@@ -21,12 +19,12 @@ margin:0 auto
     width: 20vw;
     font-style: oblique;
     text-decoration:underline  rgb(50, 249, 0);
-    font-size: calc(0.75rem + 0.75vw);
+    font-size: calc(1rem + 1vw);
     display: flex;
     justify-content: center;
 }
 .shopping-cart{
-    background-color: rgb(217, 241, 231);
+    background-color: rgb(229, 246, 239);
   
 }
 .decri{
@@ -70,6 +68,6 @@ p{
     transition: all .1s ease;
     &:hover{
         background: rgb(255, 204, 204);
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 }

@@ -1,4 +1,4 @@
-import React ,{useEffect,useState} from "react";
+import React ,{useEffect,useLayoutEffect,useState} from "react";
 import ProductCart from "./ProductCart";
 import "../styles/store.css";
 import axios from "axios";
@@ -9,23 +9,30 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingSpinner from "./LoadingSpinner";
 function Store({ products, loading, setLoading }) {
   const dispatch = useDispatch();
+  const [skip, setSkip] = useState(true);
   const  [show,setShow]=useState(false)
-  const [lastnum,setLastnum] = useState(0)
-  const number = [...new Set(useSelector(state => state.shoppingCart))].length
- 
+const number = [...new Set(useSelector(state => state.shoppingCart))].length
+const [lastnum,setLastnum] = useState(number+1)  
+console.log(number)
   useEffect(() => {
-    setLastnum(number)
-    console.log(number,lastnum,1)
-    if(number<lastnum){
+    if (skip) setSkip(false);
+    if (!skip){
+      if(number){
+ 
+        setLastnum(number)
+        if(number<lastnum){
+          return;
+        }
+        setLastnum(number)
+        console.log(number,lastnum)
+        number!==0 ? setShow(true) : null
+        setTimeout(() => {
+          setShow(false)
+        },1000)
       
-      return;
+      }
     }
-    setLastnum(number)
-    console.log(number,lastnum,2)
-    number!==0 ? setShow(true) : null
-    setTimeout(() => {
-      setShow(false)
-    },1500)
+
   },[number])
   const handleClick = (category) => {
     if (category == "--Please choose an option--") {

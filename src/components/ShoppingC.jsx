@@ -65,7 +65,7 @@ function ShoppingC() {
      setProducts(newproducts)
      dispatch({type:'cancel_shopping_cart',payload:id})
   }
-  console.log(minustotal)
+
   return (
     <div class='shopping-cart'>
       {products.length == 0 && loading == false ? (

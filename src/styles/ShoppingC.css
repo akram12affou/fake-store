@@ -23,13 +23,13 @@
   font-style: oblique;
   -webkit-text-decoration: underline rgb(50, 249, 0);
           text-decoration: underline rgb(50, 249, 0);
-  font-size: calc(0.75rem + 0.75vw);
+  font-size: calc(1rem + 1vw);
   display: flex;
   justify-content: center;
 }
 
 .shopping-cart {
-  background-color: rgb(217, 241, 231);
+  background-color: rgb(229, 246, 239);
 }
 
 .decri {
@@ -73,5 +73,5 @@
 }
 .cancel:hover {
   background: rgb(255, 204, 204);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }/*# sourceMappingURL=ShoppingC.css.map */

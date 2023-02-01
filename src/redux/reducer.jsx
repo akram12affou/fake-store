@@ -1,7 +1,7 @@
 let initialState = {
   products:[],
   product:[],
-  shoppingCart:[]
+  shoppingCart:[],
 }
 function reducer(state = initialState, { type, payload }){
   switch (type) {
@@ -18,6 +18,7 @@ function reducer(state = initialState, { type, payload }){
           newarr.push(state.shoppingCart[i])
         }
     }
+  
     return {...state,shoppingCart:newarr}
     case 'minus_shopping_cart':
       let arr = [];
