@@ -22,7 +22,7 @@ function Header() {
        </div>
        <div className='header_button-container'>
        <Link to=''><button>Store</button></Link>
-       <Link to='shoppingCart'><button>Shopping Cart <p>{number}</p></button></Link> 
+       <Link to='shoppingCart'><button>Shopping Cart {number>0 &&<p> {number}</p>}</button></Link> 
        </div>
        <div onClick={() => setIsopen(!open)} 
         className='hum_count'>
@@ -42,7 +42,7 @@ function Header() {
     </div>
     <div className='menu' style={{transform: open &&  'translateX(0)'}}>
     <Link to=''><button>Store</button></Link>
-    <Link to='shoppingCart'><button>Shopping Cart<p>{number}</p></button></Link>
+    <Link to='shoppingCart'><button>Shopping Cart{number>0 &&<p> {number}</p>}</button></Link>
     </div>
     </>
   )

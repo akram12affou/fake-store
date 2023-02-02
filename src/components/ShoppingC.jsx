@@ -42,6 +42,8 @@ function ShoppingC() {
     dispatch({type:'Cancel_All'})
     setProducts([])
     setTotal(0)
+    setMinustotal(0)
+    
   }
   useEffect(() => {
     fetch();
