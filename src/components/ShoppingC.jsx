@@ -1,9 +1,9 @@
 import axios from "axios";
-import Footer from "./Footer";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import LoadingSpinner from "./LoadingSpinner";
 import "../styles/ShoppingC.css";
+import { cancelAll } from "../redux/actions";
 function ShoppingC() {
   const dispatch = useDispatch();
   
@@ -39,7 +39,7 @@ function ShoppingC() {
     setLoading(false);
   };
   const handleBuy = () => {
-    dispatch({type:'Cancel_All'})
+    dispatch(cancelAll())
     setProducts([])
     setTotal(0)
     setMinustotal(0)

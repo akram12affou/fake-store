@@ -8,7 +8,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 function ProductDetails() {
   const [loading , setLoading] = useState()
     let {id} = useParams();
-    const dispatch = useDispatch()
+
     const state = useSelector(state =>  state.product)
 
     useEffect(() => {

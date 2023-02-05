@@ -11,8 +11,9 @@ img {
   flex-direction: column;
   justify-content: space-evenly;
   width: 25vw;
-  border: 2px solid rgb(79, 98, 96);
-  border-radius: 2%;
+  border: 2px solid rgb(98, 80, 79);
+  border-radius: 1%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 @media screen and (max-width: 768px) {
   .cart {
@@ -63,6 +64,7 @@ h3 {
   border-radius: 5%;
   font-size: 1rem;
   transition: all 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .cancel-button:hover {
   background: rgb(255, 85, 85);
@@ -78,10 +80,12 @@ h3 {
   border-radius: 5%;
   font-size: 1rem;
   transition: all 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .minus-button:hover {
   background: rgb(83, 152, 166);
   letter-spacing: 1px;
+
 }
 
 .plus-button {
@@ -93,6 +97,7 @@ h3 {
   border-radius: 5%;
   font-size: 1rem;
   transition: all 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .plus-button:hover {
   background: rgb(83, 152, 166);
@@ -107,6 +112,7 @@ h3 {
   border-radius: 5%;
   font-size: 1rem;
   transition: all 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .buy-button:hover {
   background: rgb(83, 166, 125);
